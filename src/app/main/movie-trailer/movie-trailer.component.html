@@ -1,0 +1,32 @@
+<div class="container">
+ <div class="row g-0 bg-dark bg-opacity-10 m-4">
+   <div class="col-md-8">    
+         <iframe width="750" height="500" class="m-5"
+          [src]='sanitizedTrailerLink' frameborder="0" allowfullscreen ng-show="showvideo">
+         </iframe>
+   </div>
+   <div class="col-md-3 mt-5">
+      <div class="card-body">
+        <h2 class="card-title mb-4">{{Movie[0].Title}}</h2>
+        <h4 class="card-text">
+          {{Movie[0].Description}}
+        </h4>
+        <p class="card-text m-4">
+          <small class="text-muted">Genre: {{Movie[0].Genre}}</small>
+          <br>
+          <small class="text-muted">Rating: {{Movie[0].Rating}}</small>
+          <br>
+          <small class="text-muted">Relase: {{Movie[0].ReleasedDate}}</small>
+        </p>
+      </div>
+    </div>
+ </div>
+ 
+</div>
+
+
+ <div class="container">
+    <app-favorites></app-favorites>
+ </div>
+
+ 
