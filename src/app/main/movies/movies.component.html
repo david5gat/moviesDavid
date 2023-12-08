@@ -2,16 +2,24 @@
 <div class="container-xxl mt-2">
  <app-favorites></app-favorites>
 </div>
-
 <div class="row">
   <div class="card-movie col-3"  *ngFor="let Movie of Movies" ng>
   <div class="card m-4 p-1" >
       <img src={{Movie.Image}} class="card-img-top" alt="Fissure in Sandstone"/>
       <div class="cardT card-body">
-        <h5 class="card-title">{{Movie.Title}}</h5>
-        <p class="card-text">{{Movie.Description}}</p>
-        <h3 class="text-danger">Rating:{{Movie.Rating}}</h3>
-        <a  class="btn btn-primary" data-mdb-ripple-init (click)="watchTrailer(Movie.Title)">Watch trailer</a>
+        <h5 class="card-title">{{Movie.Title}}</h5> 
+        <p class="card-text">{{Movie.Description}}</p> 
+        <div class="row">
+          <div class="col-10">
+            <h3 class="text-danger" >Rating:{{Movie.Rating}}</h3> 
+          </div>
+          <div class="col-2">
+            <i class="fa-star fa-2x" (click)="favoriteMovie(Movie)" [ngClass]="{ 'far': !Movie.favorite, 'fas': Movie.favorite }"></i>
+          </div>
+        </div>
+          
+          <a  class="btn btn-primary" data-mdb-ripple-init (click)="watchTrailer(Movie.Title)">Watch trailer</a>
+          
       </div>
     </div>
     

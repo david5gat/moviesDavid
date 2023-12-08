@@ -19,11 +19,13 @@ export class MovieTrailerComponent implements OnInit,OnDestroy{
   Movie!:string|any;
 
   ngOnInit(): void {
+
+    //get Title by localhost
     this.mTitle = localStorage.getItem('mTrailer')?.toLowerCase()
     this.Movie = this.DbMoviesService.getMovies().filter( f=> f.Title.toLowerCase().includes(this.mTitle))
     this.sanitizedTrailerLink = this.sanitaizer.bypassSecurityTrustResourceUrl(this.Movie[0].TrailerLink)
-    
     console.log(this.Movie);
+    //end of the road
   }
 
   

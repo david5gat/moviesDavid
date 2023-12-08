@@ -21,4 +21,5 @@ export interface Movies {
   ReleasedDate: string
   Image: string
   TrailerLink: string
+  favorite : boolean
 }

@@ -24,6 +24,7 @@ export class DbMoviesService {
       ReleasedDate: "3 September 2020",
       Image:"./assets/Tenet.png",
       TrailerLink: "https://www.youtube.com/embed/LdOM0x0XDMo",
+      favorite:false
     },
     {
       Title: 'Spider-Man: Into the Spider-Verse',
@@ -34,6 +35,7 @@ export class DbMoviesService {
       ReleasedDate: "14 December 2018",
       Image:"./assets/SpiderMan.png",
       TrailerLink: "https://www.youtube.com/embed/tg52up16eq0",
+      favorite:false
     },
     {
       Title: 'Knives Out',
@@ -44,6 +46,7 @@ export class DbMoviesService {
       ReleasedDate: "27 November 2019",
       Image:"./assets/KnivesOut.png",
       TrailerLink: "https://www.youtube.com/embed/qGqiHJTsRkQ",
+      favorite:false
     },
     {
       Title: ' Guardians of the Galaxy',
@@ -54,6 +57,7 @@ export class DbMoviesService {
       ReleasedDate: "1 August 2014",
       Image:"./assets/GuardiansofTheGalaxy.png",
       TrailerLink: "https://www.youtube.com/embed/d96cjJhvlMA",
+      favorite:false
     },
     {
       Title: 'Age of Ultron',
@@ -64,8 +68,13 @@ export class DbMoviesService {
       ReleasedDate: "1 May 2015",
       Image:"./assets/Avengers.png",
       TrailerLink: "https://www.youtube.com/embed/tmeOjFno6Do",
+      favorite:false
     }
   ]
+
+  updateMovies(update : Movies){
+    this.Movies = { ...this.Movies, ...update }
+  }
 
   getMovies() : Movies[]{
     return this.Movies;
